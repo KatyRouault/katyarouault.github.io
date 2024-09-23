@@ -3,35 +3,35 @@ Group: Lexie Christopher, Katy Rouault
 errors from find_errors.html: (should be 25 total):
 
 1. line 1- missing <!DOCTYPE html> on first line
-2. line 6- changed language to lang
-3. line 7- added special characters line
-4. line 10- close head tag
-5. line 12- needs </h1> after welcome text
-6. line 14- need <p> before paragraph text
-7. line 22- opening tag doesn't need / - should just be <li>
-8. line 27- changed </ul> to </ol> to match opening tag
-9. line 29- need closing tab </p>
-10. line 31- added alt and height to image tag
-11. line 31- change image link to correct one- jpg
-12. line 33- add link close tag to end
-13. line 42- add / to closing tag instead of image tag
-14. line 43- fix closing tag to </td>
-15. line 49- close table tag
-16. line 51- fix image link and add size
-17. line 51- change source to src
-18. line 53- make paragraph text have strike through it
-19. line 55- correct code to make text lightgray
-20. line 59- make button click to link to new page
-21. line 64- close comment correctly
-22. line 66- fix link
-23. line 68- underline text
-24. line 70- change dl to ul(open tag and closing-line 73)
-25. line 74- change to h2 tag
+2. line 3- changed language to lang
+3. line 5- added special characters line
+4. line 6- close head tag
+5. line 9- needs </h1> after welcome text
+6. line 11- need <p> before paragraph text
+7. line 19- opening tag doesn't need / - should just be <li>
+8. line 24- changed </ul> to </ol> to match opening tag
+9. line 27- need closing tab </p>
+10. line 29- added alt and height to image tag
+11. line 29- change image link to correct one- jpg
+12. line 31- add link close tag to end
+13. line 31- add / to closing tag instead of image tag
+14. line 36- fix closing tag to </td>
+15. line 46- close table tag
+16. line 47- fix image link and add size
+17. line 47- change source to src
+18. line 49- make paragraph text have strike through it
+19. line 51- correct code to make text lightgray
+20. line 53- make button click to link to new page
+21. line 55- close comment correctly
+22. line 57- fix link
+23. line 59- underline text
+24. line 61- change dl to ul(open tag and closing-line 64)
+25. line 65- change to h2 tag
 
 
 errors from find_errors_2.html (should be 15 total):
 1. line 2- move html tag below doctype
-2. line 4- add lang tag
+2. line 2- add lang tag
 3. line 5- add special characters tag
 4. line 7- close head tag
 5. line 8- add > to end of body tag
@@ -43,8 +43,8 @@ errors from find_errors_2.html (should be 15 total):
 11. line 17- add <h2> to start of big heading
 12. line 19- add <p> in front of text
 13. line 20- make text a comment
-14. line 21- add body closing tag
-15. line 22- fix html close tag
+14. line 22- add body closing tag
+15. line 23- fix html close tag
 
 
 
