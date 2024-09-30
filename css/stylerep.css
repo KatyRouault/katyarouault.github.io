@@ -1,0 +1,73 @@
+/* General page styles */
+body {
+    margin: 0;
+  }
+  
+  html {
+    font-family: 'Helvetica neue', Arial, 'sans serif';
+    font-size: 10px;
+    background-color: #ccc;
+  }
+  
+  /* Card container styles */
+  .card {
+    width: 35em; /* Fixed width of 35em (~350px) */
+    height: 22em; /* Fixed height of 22em (~220px) */
+    margin: 5em auto; /* Center the card */
+    background-color: rgb(0, 34, 255); /* Solid background color */
+    border: 0.2em solid black; /* Solid border */
+    border-radius: 1.5em; /* Rounded corners */
+  }
+  
+  /* Header styles */
+  .card header {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0)); /* Darker to lighter gradient */
+    border-radius: 1.5em 1.5em 0 0; /* Rounded corners at the top */
+    padding: 1em; /* 10px padding, expressed in em */
+    height: 3em; /* Content height of 30px (3em) */
+  }
+  
+  /* Footer styles */
+  .card footer {
+    background-image: linear-gradient(to bottom, rgba(0, 8, 170, 0), rgba(118, 127, 255, 0.1)); /* Lighter to darker gradient */
+    border-radius: 0 0 1.5em 1.5em; /* Rounded corners at the bottom */
+    padding: 1em; /* 10px padding */
+    height: 3em; /* Content height of 30px (3em) */
+  }
+  
+  /* Image styles */
+  .card article img {
+    max-height: 100%; /* Ensures the image scales with the container */
+    float: right; /* Float the image to the right */
+    margin-left: 1em; /* Add some spacing between image and text */
+  }
+  
+  /* Article styles */
+  .card article {
+    height: 10em; /* Equivalent to 100px */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    padding: 1em; /* Padding for text */
+  }
+  
+  /* Header text */
+  .card header h2 {
+    font-size: 2em; /* Equivalent to 20px */
+    margin: 0; /* Remove default margin */
+    line-height: 1.5em; /* Center text vertically (30px content height) */
+  }
+  
+  /* Footer text */
+  .card footer p {
+    font-size: 1.5em; /* Equivalent to 15px */
+    margin: 0; /* Remove default margin */
+    line-height:1.5em; /* Center text vertically */
+  }
+  
+  /* Paragraph inside article */
+  .card article p {
+    padding-left: 0em; /* Aligns with other text */
+    color: #f5f5f5; /* Light color for readability */
+    margin: 0; /* Remove default margin */
+    line-height: 1.5em
+  }
+  
