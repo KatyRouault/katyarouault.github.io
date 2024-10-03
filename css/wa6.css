@@ -1,0 +1,51 @@
+body {
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-image: url("../img/football.jpg");
+    display: grid;
+    height: 100%;
+}
+
+.content-boxes {
+    display: grid;
+    grid-template-columns: 25% auto 25% 15%;
+    grid-template-rows: 10px auto auto;
+    grid-column-gap: 10px;
+    margin: 0;
+}
+
+.overlay-team {
+    grid-column-start: 2;
+    grid-row-start: 2;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 10px; /* Reduced padding */
+    border-radius: 8px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 36px; /* Larger font size */
+    font-weight: bold;
+    width: fit-content; /* Box fits around content */
+    margin: 0 auto; /* Centered */
+}
+
+.team-score {
+    margin-left: 15px;
+    font-size: 36px; /* Larger score font */
+    color: #FF5733;
+}
+
+.overlay-clock {
+    grid-column-start: 2;
+    grid-row-start: 3;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 5px; /* Reduced padding */
+    border-radius: 8px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 28px; /* Larger clock font */
+    font-weight: bold;
+    color: #333;
+    width: fit-content; /* Box fits around content */
+    margin: 10px auto; /* Centered */
+}
