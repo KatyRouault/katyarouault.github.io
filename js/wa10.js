@@ -9,7 +9,7 @@ function randomValueFromArray(array) {
 }
 
 // 2. RAW TEXT STRINGS
-const storyText = "It was below freezing and snowing outside, so :insertx: went skiing. When they got to :inserty:, they realized it wasn't a big ski mountain with marshmellos, so then :insertx: :insertz:. Bob saw everything, and didn't know what to do because — :insertx: were getting married tomorrow and it was all ruined.";
+const storyText = "It was below freezing and snowing outside, so :insertx: went skiing. When they got to :inserty:, they realized it wasn't a big ski mountain with marshmellos, so then :insertx: :insertz:. Bob saw everything, and didn't know what to do because — :insertx: and Bob were getting married tomorrow and it was all ruined.";
 
 const insertX = [
   "Mr. Hubby",
