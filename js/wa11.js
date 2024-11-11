@@ -4,13 +4,13 @@ const btn = document.querySelector('button');
 const overlay = document.querySelector('.overlay');
 
 // Declaring the array of image filenames and their alt text
-const images = ['pic1.jpg', 'pic2.jpg', 'pic3.jpg', 'pic4.jpg', 'pic5.jpg'];
+const images = ['img1.jpg', 'img2.jpg', 'img3.jpg', 'img4.jpg', 'img5.jpg'];
 const altText = {
-    'pic1.jpg': 'Closeup of a blue human eye',
-    'pic2.jpg': 'Rocks on a sandy beach',
-    'pic3.jpg': 'Purple and white pansies',
-    'pic4.jpg': 'Section of a large red leaf',
-    'pic5.jpg': 'An orange butterfly on a leaf'
+    'img1.jpg': 'Closeup of a blue human eye',
+    'img2.jpg': 'Rocks on a sandy beach',
+    'img3.jpg': 'Purple and white pansies',
+    'img4.jpg': 'Section of a large red leaf',
+    'img5.jpg': 'An orange butterfly on a leaf'
 };
 
 // Looping through images
