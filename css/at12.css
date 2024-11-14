@@ -1,0 +1,17 @@
+.app {
+    text-align: center;
+    margin-top: 20px;
+}
+.quote-text {
+    margin: 10px 0;
+    font-size: 1.5em;
+}
+#comic {
+    max-width: 100%;
+    height: auto;
+}
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1em;
+}
