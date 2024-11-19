@@ -1,38 +1,38 @@
-let myData = {}
+let myData = {};
 
 function fetchData() {
-    comicNumber = Math.floor(Math.random() * 3000) +1;  
+    const comicNumber = Math.floor(Math.random() * 3000) + 1;  
     fetch(`https://corsproxy.io/?https://xkcd.com/${comicNumber}/info.0.json`)
         .then(res => {
-            if(res.ok){
+            if (res.ok) {
                 return res.json();
+            } else {
+                console.error("HTTP error: ", res.status);
+                throw new Error("Failed to fetch comic data");
             }
-            else {
-                console.log(res);
-                }
-              }  )
+        })
         .then(res => {
             myData = res;
-            console.log(myData)
-            //title
+            console.log(myData);
+            // Update title
             document.getElementById("title").innerHTML = myData.title;
-            //image
+            // Update image
             document.getElementById("comic").src = myData.img;
             document.getElementById("comic").setAttribute("alt", myData.alt);
-            //date
-            let m = myData.month;
-            let d = myData.day;
-            let y = myData.year;
-
-            document.getElementById("date").innerHTMl = (m + "/" + d + "/" + y)
-    })
-
-    .catch(error => {console.log(error)})
+            // Update date
+            const date = `${myData.month}/${myData.day}/${myData.year}`;
+            document.getElementById("date").innerHTML = date;
+        })
+        .catch(error => {
+            console.error("Fetch error: ", error);
+        });        
 }
 
-fetchData();
-
-document.getElementById("generate").addEventListener("click", e => {fetchData();});
+// Ensure DOM is fully loaded before adding event listener
+document.addEventListener("DOMContentLoaded", () => {
+    fetchData();
+    document.getElementById("generate").addEventListener("click", fetchData);
+});
 
 // Returns a random integer from 0 to 99:
 //we do => because its a more consise way to format your function
