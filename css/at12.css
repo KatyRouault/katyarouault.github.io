@@ -1,17 +1,49 @@
-.app {
+/* at12.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
     text-align: center;
-    margin-top: 20px;
+    margin: 0;
+    padding: 20px;
 }
-.quote-text {
-    margin: 10px 0;
-    font-size: 1.5em;
+
+h1 {
+    font-size: 2.5em;
+    color: #0056b3;
+    margin-bottom: 20px;
 }
-#comic {
-    max-width: 100%;
-    height: auto;
+
+p {
+    font-size: 1.2em;
+    margin: 20px 0;
 }
+
 button {
-    margin-top: 20px;
     padding: 10px 20px;
-    font-size: 1em;
+    font-size: 1.2em;
+    color: #fff;
+    background-color: #0056b3;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    background-color: #003d7a;
+}
+
+#comic {
+    margin: 20px auto;
+    max-width: 90%;
+    height: auto;
+    border: 2px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#fact {
+    font-style: italic;
+    color: #555;
+    margin-bottom: 10px;
 }
