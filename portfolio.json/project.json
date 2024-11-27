@@ -1,13 +1,22 @@
 {
-    "projects":[
+    "projects":[{
+            "name": "Project One", 
+            "subdomain": "project_one",
+            "category":["web","text","image","clear"],
+            "subtitle": "this is project one",
+            "abstract": "this a long project made with web tools",
+            "description": ["web design", "html", "css", "java script"],
+            "mainimg": "../img/port (1).jpeg",
+            "image": "../img/port (1).jpeg"},
         {
-            "name": "katy_project", 
-            "URL": "lajdfljadflkajf",
-            "subdomain": "something here"},
-        {
-            "name": "Project FOOBAR", 
-            "subdomain": "something here 2",
-            "published": true}
+            "name": "Project Two", 
+            "subdomain": "project_two",
+            "category":["web","clear"],
+            "subtitle": "this is project two",
+            "abstract": "this a long project made with web tools",
+            "description": ["web design", "html", "css", "java script"],
+            "mainimg": "../img/port (2).jpeg",
+            "image": "../img/port (2).jpeg"}
         ],
     "my_contacts": []
 
