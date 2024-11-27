@@ -1,0 +1,14 @@
+{
+    "projects":[
+        {
+            "name": "katy_project", 
+            "URL": "lajdfljadflkajf",
+            "subdomain": "something here"},
+        {
+            "name": "Project FOOBAR", 
+            "subdomain": "something here 2",
+            "published": true}
+        ],
+    "my_contacts": []
+
+}
