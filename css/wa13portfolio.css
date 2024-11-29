@@ -24,10 +24,11 @@ body{
     border: 1px solid black;
     margin-top: 10px;
     padding: 15px 20px;
+    column-gap: 10px;
 }
 
 .project img{
-    width:10vw;
+    width:20vw;
 }
 
 #buttons{
@@ -43,8 +44,7 @@ body{
     border: 2px fixed rgb(191, 176, 158);
     border-radius: 0px;
     background-color: rgb(191, 176, 158);
-    position: fixed;
-    top: 0;
+    position: sticky;
     width: 100%;
 }
 
@@ -53,10 +53,9 @@ body{
     grid-template-columns: 1fr 1fr; 
     align-items: center; 
     column-gap: 70px; 
-    padding: 200px;
+    padding: 150px;
     padding-left: 100px;
     padding-right: 100px;
-    
 }
 
 #about h1, 
@@ -82,4 +81,8 @@ body{
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin: 0px;
     justify-self: center; 
+}
+
+#about img{
+    border: 2px solid black;
 }

@@ -1,13 +1,13 @@
 {
     "projects":[{
-            "name": "Project One", 
-            "subdomain": "project_one",
+            "name": "Expressive Booklet", 
+            "subdomain": "expressive_booklet",
             "category":["web","text","image","clear"],
-            "subtitle": "this is project one",
-            "abstract": "this a long project made with web tools",
-            "description": ["web design", "html", "css", "java script"],
-            "mainimg": "../img/port (1).jpeg",
-            "image": "../img/port (1).jpeg"},
+            "subtitle": "An accordian booklet that typographically expresses a song lyric.",
+            "abstract": "this a long project made with adobe illustrator.",
+            "description": ["graphic design", "adobe illustrator", "typography"],
+            "mainimg": "../img/port (1).jpg",
+            "image": "../img/port (1).jpg"},
         {
             "name": "Project Two", 
             "subdomain": "project_two",
@@ -16,8 +16,56 @@
             "abstract": "this a long project made with web tools",
             "description": ["web design", "html", "css", "java script"],
             "mainimg": "../img/port (2).jpeg",
-            "image": "../img/port (2).jpeg"}
+            "image": "../img/port (2).jpeg"},
+        {
+            "name": "Project Three", 
+            "subdomain": "project_three",
+            "category":["text","clear"],
+            "subtitle": "this is project three",
+            "abstract": "this a long project made with web tools",
+            "description": ["web design", "html", "css", "java script"],
+            "mainimg": "../img/port (3).jpeg",
+            "image": "../img/port (3).jpeg"},
+        {
+            "name": "Project Four", 
+            "subdomain": "project_four",
+            "category":["web","clear"],
+            "subtitle": "this is project four",
+            "abstract": "this a long project made with web tools",
+            "description": ["web design", "html", "css", "java script"],
+            "mainimg": "../img/port (4).jpeg",
+            "image": "../img/port (4).jpeg"},
+        {
+            "name": "Project Five", 
+            "subdomain": "project_five",
+            "category":["web","clear"],
+            "subtitle": "this is project five",
+            "abstract": "this a long project made with web tools",
+            "description": ["web design", "html", "css", "java script"],
+            "mainimg": "../img/port (5).jpeg",
+            "image": "../img/port (5).jpeg"}
         ],
-    "my_contacts": []
+    "my_carousel": [
+        {
+            "src": "../img/port (1).jpg",
+            "alt": "img1"
+        },
+        {
+            "src": "../img/port (2).jpg",
+            "alt": "img2"
+        },
+        {
+            "src": "../img/port (3).jpg",
+            "alt": "img3"
+        },
+        {
+            "src": "../img/port (4).jpg",
+            "alt": "img4"
+        },
+        {
+            "src": "../img/port (5).jpg",
+            "alt": "img5"
+        }
+    ]
 
 }

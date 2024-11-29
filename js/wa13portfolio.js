@@ -14,7 +14,7 @@ function parseData(data){
     for(let i=0; i<data.projects.length; i++){
     document.getElementById("projects").innerHTML += `<a href="../projects_folder/${data.projects[i].subdomain}.html">
     <div class="row project" id="${data.projects[i].subdomain}">
-        <div class="projimg"><img src="../img/port (${i+1}).jpeg"></div>
+        <div class="projimg"><img src="../img/port (${i+1}).jpg"></div>
         <div class="description"><h2>${data.projects[i].name}</h2><p class="subtitle">${data.projects[i].subtitle}</p>
         <p>${data.projects[i].abstract}</p></div></div></a>`;
     }
