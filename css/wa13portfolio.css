@@ -86,3 +86,48 @@ body{
 #about img{
     border: 2px solid black;
 }
+
+#project {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    align-items: center; 
+    column-gap: 300px; 
+    padding: 100px;
+}
+
+#project .text {
+    grid-column: 1; 
+    margin:0px;
+    border: 2px solid black; 
+    padding: 20px; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    background-color: #f9f9f9; 
+}
+
+#project .title{
+    font-size: 2.5em;
+}
+
+#project .h2{
+    padding: 10px;
+}
+
+ #project h2, #project p {
+    margin: 10px;
+}
+
+#project img {
+    grid-column: 2;
+    width: 180%; /* Ensure the image fills the column */
+    max-width: 700px; /* Limit image width */
+    border-radius: 8px; /* Optional: Add rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add shadow to the image */
+    justify-self: center;
+}
+
+.proj {
+    max-width: 1200px; /* Optional: Limit the overall width of the project section */
+    margin: 0px; /* Center the content */
+}
+

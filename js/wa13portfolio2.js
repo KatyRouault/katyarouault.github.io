@@ -25,7 +25,10 @@ function findProjectInJSON(projects){
 }
 
 function buildPage(project){
-    console.log(project);
-    document.getElementById("project").innerHTML += `<h1>${project.name}</h1>`;
+    document.getElementById("project").innerHTML += `<h1 class="title">${project.name}</h1>
+    <div class="text"><h2>${project.subtitle}</h2>
+    <p>${project.abstract}</p>
+    <p>description: ${project.description}</p>
+    <p>categrory: ${project.category}</p></div>`;
+    document.getElementById("project").innerHTML += `<img src="${project.mainimg}" alt="${project.name}" />`;
 }
-
