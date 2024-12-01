@@ -21,21 +21,22 @@ function parseData(data){
     } 
 }
 
-for(b of document.querySelectorAll("#buttons button")){
-    b.addEventListener("click", e=>{
-        console.log(e.target.value);
-        sortProjects(e.target.value);
-    })
-}
+document.querySelectorAll('.dropdown-content a').forEach(item=> {
+    item.addEventListener('click', event =>{
+        event.preventDefault();
+        const selectedItem =event.target.getAttribute('data-item');
+        sortProjects(selectedItem)
+    });
+});
 
-function sortProjects(button){
-    if(button == "clear"){
+function sortProjects(selectedItem){
+    if(selectedItem == "clear"){
         for(i=0;i<proj.projects.length; i++){
             document.getElementById(proj.projects[i].subdomain).style.display = "flex";
         }
-    }else if(button != undefined){
+    }else if(selectedItem != undefined){
             for(i=0; i<proj.projects.length;i++){
-                if(proj.projects[i].category.includes(button) == true){
+                if(proj.projects[i].category.includes(selectedItem) == true){
                     document.getElementById(proj.projects[i].subdomain).style.display = "flex";//shows the project if its in the selected category//
                 }else{
                     document.getElementById(proj.projects[i].subdomain).style.display = "none";//hides the project if it is not a category//

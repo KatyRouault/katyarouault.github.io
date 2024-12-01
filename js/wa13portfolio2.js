@@ -38,7 +38,7 @@ function buildPage(project){
     for(let i=0; i<project.projimages.length; i++){
         const div = document.createElement('div');
         div.classList.add('carousel-item');
-        div.innerHTML = `<img class="img-carousel" src="${project.projimages[i]}" style="width:30%">`;
+        div.innerHTML = `<img class="img-carousel" src="${project.projimages[i]}" style="width:100%">`;
         carousel.appendChild(div);
     }
 }

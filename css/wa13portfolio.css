@@ -1,55 +1,12 @@
+    /*Main Page*/
 body{
     background-color: rgb(214, 208, 201);
     margin: 0;
     padding-bottom: 500px;
 }
-#projects{
-    display: flex;
-    flex-direction: column;
-    margin:10vh 20vw;
-}
 
-#projects a{
-    text-decoration: none;
-    color:black;
-}
-
-.project:hover{
-    background-color: #919191;
-}
-
-.project{
-    display:flex;
-    flex-direction: row;
-    border: 1px solid black;
-    margin-top: 10px;
-    padding: 15px 20px;
-    column-gap: 10px;
-}
-
-.project img{
-    width:20vw;
-}
-
-#buttons{
-    display:flex;
-    justify-content: center;
-}
-
-#buttons button{
-    margin:10px;
-}
-
-#buttons{
-    border: 2px fixed rgb(191, 176, 158);
-    border-radius: 0px;
-    background-color: rgb(191, 176, 158);
-    position: sticky;
-    width: 100%;
-    margin:20px;
-}
-
-#about {
+   /*About Me Page*/
+   #about {
     display: grid;
     grid-template-columns: 1fr 1fr; 
     align-items: center; 
@@ -88,12 +45,118 @@ body{
     border: 2px solid black;
 }
 
-#project {
+    /*Button to Portfolio Page*/
+/*portfolio link styling*/
+button{
+    background-color: #c8c4c4;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+/*Link hover*/
+button:hover{
+    background-color: #717171;
+    
+}
+
+/*Project Page Links/Options*/
+#projects{
+    display: flex;
+    flex-direction: column;
+    margin:10vh 20vw;
+}
+
+#projects a{
+    text-decoration: none;
+    color:black;
+}
+
+.project:hover{
+    background-color: #919191;
+}
+
+.project{
+    display:flex;
+    flex-direction: row;
+    border: 1px solid black;
+    margin-top: 10px;
+    padding: 15px 20px;
+    column-gap: 10px;
+    background-color:rgb(234, 230, 224);
+}
+
+.project img{
+    width:20vw;
+}
+
+        /*Filter*/
+ /* Container for the dropdown */
+ .dropdown {
+    position: relative;
+    display: inline-block;
+    margin: 20px;
+    left: 80%;
+}
+
+/* Dropdown button styling */
+.dropdown-button {
+    background-color: #919191;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+/* Dropdown content styling */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+/* Items inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+/* Change color on hover */
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Show the dropdown content on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Change button color on hover */
+.dropdown:hover .dropdown-button {
+    background-color: #2a2a2a;
+}
+ 
+    /*Project Pages*/
+.projectbody{
+    margin:50px;
+}
+.proj {
     display: grid;
     grid-template-columns: 1fr 1fr; 
     align-items: center; 
-    column-gap: 300px; 
-    padding: 100px;
+    column-gap: 100px; 
+    padding-top: 50px;
 }
 
 #project .text {
@@ -118,25 +181,16 @@ body{
     margin: 10px;
 }
 
-#project img {
-    grid-column: 2;
-    width: 180%; /* Ensure the image fills the column */
-    max-width: 700px; /* Limit image width */
-    border-radius: 8px; /* Optional: Add rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add shadow to the image */
-    justify-self: center;
-}
-
 .proj {
-    max-width: 1200px; /* Optional: Limit the overall width of the project section */
-    margin: 0px; /* Center the content */
+    max-width: 1200px; 
+    margin: 20px; 
 }
 
 /*Project Image Carousel*/
 #carousel-container {
-    width: 700px;
+    max-width: 1000px;
     position: relative;
-    margin: auto;
+    margin: 0;
   }
   
   /* Hide the images by default */
@@ -147,18 +201,20 @@ body{
   #carousel{
     text-align:center;
     padding: 20px;
-    border: 2px solid black;
-    background-color: rgb(239, 235, 231);
     height: 200px;
   }
 
  .img-carousel{
     max-height: 400px;
+    border: 30px solid rgb(255, 255, 255);
+    border-radius: 10px;
+    background-color: rgb(239, 235, 231);
  }
   /* Next & previous buttons */
   .prev, .next {
     cursor: pointer;
     position: absolute;
+    top: 80%;
     width: auto;
     margin-top: -22px;
     padding: 16px;
@@ -171,10 +227,12 @@ body{
   }
   
   .prev{
-    left: 40%
+    left: 40%;
+    margin-left: -250px;
   }
   /* Position the "next button" to the right */
   .next {
+    margin-right: -310px;
     right: 40%;
     border-radius: 3px 0 0 3px;
   }
@@ -182,17 +240,5 @@ body{
   /* On hover, add a black background color with a little bit see-through */
   .prev:hover, .next:hover {
     background-color: rgba(0,0,0,0.8);
-  }
-  
- 
-  /* Fading animation */
-  .fade {
-    animation-name: fade;
-    animation-duration: 1.5s;
-  }
-  
-  @keyframes fade {
-    from {opacity: .4}
-    to {opacity: 1}
   }
   
