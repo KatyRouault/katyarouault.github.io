@@ -1,6 +1,6 @@
 let proj;
 let slideIndex = 1;
-showSlides(slideIndex);
+
 
 fetch('../portfolio.json/project.json')
     .then(response=>{
@@ -9,6 +9,7 @@ fetch('../portfolio.json/project.json')
         console.log(projects); //this variable should match the one about which is the projects//
         proj =projects;
         parseData(projects);
+        showSlides(slideIndex);
     }).catch(err =>{
         console.log(`error ${err}`);
     })
@@ -25,7 +26,7 @@ function parseData(data){
     for(let i=0; i<data.carousel.length; i++){
         const div = document.createElement('div');
         div.classList.add('carousel-item');
-        div.innerHTML = `<img src="${data.carousel[i].src}" alt="${data.carousel[i].alt}" style="width:100%">`;
+        div.innerHTML = `<img class="img-carousel" src="${data.carousel[i].src}" alt="${data.carousel[i].alt}" style="width:30%">`;
         carousel.appendChild(div);
     }
 }
@@ -69,18 +70,24 @@ function plusSlides(n) {
     let i;
     let slides = document.getElementsByClassName("carousel-item");
     let dots = document.getElementsByClassName("dot");
-    if (n > slides.length) {slideIndex = 1}
-    if (n < 1) {slideIndex = slides.length}
+    if (n > slides.length) {
+        slideIndex = 1;
+    }
+    if (n < 1) {
+        slideIndex = slides.length;
+    }
     for (i = 0; i < slides.length; i++) {
       slides[i].style.display = "none";
+      slides[slideIndex-1].style.display = "block";
       //console.log(slides[i]);
     }
+    console.log(slides[slideIndex-1]);
+    
     for (i = 0; i < dots.length; i++) {
       dots[i].className = dots[i].className.replace(" active", "");
 
     }
-    console.log(slides[slideIndex-1]);
-    slides[slideIndex-1].style = "block";
+    
     dots[slideIndex-1].className += " active";
   }
 

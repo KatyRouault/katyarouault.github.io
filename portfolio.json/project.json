@@ -45,7 +45,7 @@
             "mainimg": "../img/port (5).jpg",
             "image": "../img/port (5).jpg"}
         ],
-    "my_carousel": [
+    "carousel": [
         {
             "src": "../img/port (1).jpg",
             "alt": "img1"
