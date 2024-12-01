@@ -7,7 +7,8 @@
             "abstract": "this a long project made with adobe illustrator.",
             "description": ["graphic design", " adobe illustrator", " typography"],
             "mainimg": "../img/port (1).jpg",
-            "image": "../img/port (1).jpg"},
+            "image": "../img/port (1).jpg",
+            "projimages":["../img/port (1).jpg", "../img/port (1)2.jpg"]},
         {
             "name": "Project Two", 
             "subdomain": "project_two",
@@ -16,7 +17,8 @@
             "abstract": "this a long project made with web tools",
             "description": ["web design", "html", "css", "java script"],
             "mainimg": "../img/port (2).jpg",
-            "image": "../img/port (2).jpg"},
+            "image": "../img/port (2).jpg",
+            "projimages":["../img/port (2).jpg", "../img/port (2)2.jpg"]},
         {
             "name": "Project Three", 
             "subdomain": "project_three",
@@ -25,7 +27,8 @@
             "abstract": "this a long project made with web tools",
             "description": ["web design", "html", "css", "java script"],
             "mainimg": "../img/port (3).jpg",
-            "image": "../img/port (3).jpg"},
+            "image": "../img/port (3).jpg",
+            "projimages":["../img/port (3).jpg", "../img/port (3)2.jpg"]},
         {
             "name": "Project Four", 
             "subdomain": "project_four",
@@ -34,7 +37,8 @@
             "abstract": "this a long project made with web tools",
             "description": ["web design", "html", "css", "java script"],
             "mainimg": "../img/port (4).jpg",
-            "image": "../img/port (4).jpg"},
+            "image": "../img/port (4).jpg",
+            "projimages":["../img/port (4).jpg", "../img/port (4)2.jpg"]},
         {
             "name": "Project Five", 
             "subdomain": "project_five",
@@ -43,7 +47,8 @@
             "abstract": "this a long project made with web tools",
             "description": ["web design", "html", "css", "java script"],
             "mainimg": "../img/port (5).jpg",
-            "image": "../img/port (5).jpg"}
+            "image": "../img/port (5).jpg",
+            "projimages":["../img/port (1).jpg", "../img/port (1)2.jpg"]}
         ],
     "carousel": [
         {
