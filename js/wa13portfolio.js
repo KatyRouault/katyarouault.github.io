@@ -1,4 +1,7 @@
 let proj;
+let slideIndex = 1;
+showSlides(slideIndex);
+
 fetch('../portfolio.json/project.json')
     .then(response=>{
         return response.json();
@@ -17,6 +20,13 @@ function parseData(data){
         <div class="projimg"><img src="../img/port (${i+1}).jpg"></div>
         <div class="description"><h2>${data.projects[i].name}</h2><p class="subtitle">${data.projects[i].subtitle}</p>
         <p>${data.projects[i].abstract}</p></div></div></a>`;
+    } 
+    const carousel = document.getElementById("carousel");
+    for(let i=0; i<data.carousel.length; i++){
+        const div = document.createElement('div');
+        div.classList.add('carousel-item');
+        div.innerHTML = `<img src="${data.carousel[i].src}" alt="${data.carousel[i].alt}" style="width:100%">`;
+        carousel.appendChild(div);
     }
 }
 
@@ -44,6 +54,37 @@ function sortProjects(button){
         console.log("error, button value is undefined");
     }
 }
+
+// Next/previous controls
+function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+  
+  // Thumbnail image controls
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+  
+  function showSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName("carousel-item");
+    let dots = document.getElementsByClassName("dot");
+    if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+      //console.log(slides[i]);
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+
+    }
+    console.log(slides[slideIndex-1]);
+    slides[slideIndex-1].style = "block";
+    dots[slideIndex-1].className += " active";
+  }
+
+
 //TO DO//
 //when getting images call them port (1), port (2), and so on. either make them png or change the htmlin this java//
 
