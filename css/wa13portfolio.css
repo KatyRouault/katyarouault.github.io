@@ -5,13 +5,35 @@ body{
     padding-bottom: 500px;
 }
 
+    /*Nav Bar*/
+Nav{
+    border: none;
+    background-color: rgb(199, 187, 171);
+    padding: 10px;
+}
+
+button{
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+/*Link hover*/
+button:hover{
+    background-color: #717171;
+    
+}
    /*About Me Page*/
-   #about {
+#about {
     display: grid;
     grid-template-columns: 1fr 1fr; 
     align-items: center; 
-    column-gap: 70px; 
-    padding: 150px;
+    column-gap: 20px; 
+    padding: 50px;
     padding-left: 100px;
     padding-right: 100px;
 }
@@ -24,44 +46,24 @@ body{
 
 #about .text-box {
     grid-column: 1; 
-    border: 2px solid black; 
+    border: none; 
     padding: 20px; 
     border-radius: 10px; 
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
     background-color: #f9f9f9; 
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 #about img {
     grid-column: 2; 
     width: 100%; 
-    max-width: 300px; 
+    max-width: 400px; 
     border-radius: 200px; 
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin: 0px;
     justify-self: center; 
-}
-
-#about img{
-    border: 2px solid black;
-}
-
-    /*Button to Portfolio Page*/
-/*portfolio link styling*/
-button{
-    background-color: #c8c4c4;
-    color: white;
-    padding: 10px 20px;
-    font-size: 16px;
     border: none;
-    cursor: pointer;
-    border: 1px solid black;
-    border-radius: 10px;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-}
-/*Link hover*/
-button:hover{
-    background-color: #717171;
-    
 }
 
 /*Project Page Links/Options*/
@@ -148,15 +150,14 @@ button:hover{
 }
  
     /*Project Pages*/
-.projectbody{
-    margin:50px;
-}
+
 .proj {
     display: grid;
     grid-template-columns: 1fr 1fr; 
     align-items: center; 
     column-gap: 100px; 
     padding-top: 50px;
+    padding-left: 50px;
 }
 
 #project .text {
