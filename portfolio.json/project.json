@@ -10,8 +10,8 @@
             "image": "../img/port (1).jpg",
             "projimages":["../img/port (1).jpg", "../img/port (1)2.jpg"]},
         {
-            "name": "Project Two", 
-            "subdomain": "project_two",
+            "name": "Synthesize, Sketch, Critique", 
+            "subdomain": "synthesize_sketch_critique",
             "category":["web","clear"],
             "subtitle": "this is project two",
             "abstract": "this a long project made with web tools",
@@ -20,8 +20,8 @@
             "image": "../img/port (2).jpg",
             "projimages":["../img/port (2).jpg", "../img/port (2)2.jpg"]},
         {
-            "name": "Project Three", 
-            "subdomain": "project_three",
+            "name": "Type Specimen Poster", 
+            "subdomain": "type_specimen_poster",
             "category":["text","clear"],
             "subtitle": "this is project three",
             "abstract": "this a long project made with web tools",
@@ -30,8 +30,8 @@
             "image": "../img/port (3).jpg",
             "projimages":["../img/port (3).jpg", "../img/port (3)2.jpg"]},
         {
-            "name": "Project Four", 
-            "subdomain": "project_four",
+            "name": "Unwrapped Packaging", 
+            "subdomain": "unwrapped_packaging",
             "category":["web","clear"],
             "subtitle": "this is project four",
             "abstract": "this a long project made with web tools",
@@ -40,15 +40,15 @@
             "image": "../img/port (4).jpg",
             "projimages":["../img/port (4).jpg", "../img/port (4)2.jpg"]},
         {
-            "name": "Project Five", 
-            "subdomain": "project_five",
+            "name": "Personal Logo Typeface", 
+            "subdomain": "personal_logo_typeface",
             "category":["web","clear"],
             "subtitle": "this is project five",
             "abstract": "this a long project made with web tools",
             "description": ["web design", "html", "css", "java script"],
             "mainimg": "../img/port (5).jpg",
             "image": "../img/port (5).jpg",
-            "projimages":["../img/port (1).jpg", "../img/port (1)2.jpg"]}
+            "projimages":["../img/port (5).jpg", "../img/port (5)2.jpg"]}
         ],
     "carousel": [
         {
