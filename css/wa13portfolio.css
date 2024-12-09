@@ -10,6 +10,10 @@ Nav{
     border: none;
     background-color: rgb(199, 187, 171);
     padding: 10px;
+    position: sticky;
+    top:0;
+    z-index: 1;
+    
 }
 
 button{
@@ -264,8 +268,18 @@ button:hover{
 }
 
 /*Resume*/
-.resume{
-    width:900px;
-    padding-left: 200px;
-}
+.imgcontainer {
+    display: flex;              
+    justify-content: center;    
+    align-items: center;       
+    height: 100%;              
+    width: 100%;                
+    position: relative;       
+  }
+  
+  .resume {
+    width: 50%;    
+    height: auto;  
+    display: block; 
+  }
   
