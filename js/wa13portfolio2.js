@@ -31,7 +31,8 @@ function buildPage(project){
     <div class="text"><h2>${project.subtitle}</h2>
     <p>${project.abstract}</p>
     <p>description: ${project.description}</p>
-    <p>categrory: ${project.category}</p></div>`;
+    <p>My grade: ${project.grade}</p>
+    <p>What I would change now: ${project.change}</p></div>`;
 
     //Looping through project images and making carousel
     const carousel = document.getElementById("carousel");
