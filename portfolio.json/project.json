@@ -58,7 +58,19 @@
             "change": "I would fix nothing.",
             "mainimg": "../img/port (5).jpg",
             "image": "../img/port (5).jpg",
-            "projimages":["../img/port (5).jpg", "../img/port (5)2.jpg"]}
+            "projimages":["../img/port (5).jpg", "../img/port (5)2.jpg"]},
+        {
+            "name": "App Prototype", 
+            "subdomain": "app_prototype",
+            "category":["Figma","clear"],
+            "subtitle": "A new app prototype for espresso to go.",
+            "abstract": "Using figma I created this interactive app prototype. I was got to choose three characteristics to create the app. I chose boarding pass, coffee, and feelings so my app has it all.",
+            "description": ["digital design", "figma", "design foundations"],
+            "grade": "10/10 pts.",
+            "change": "I would fix the name of the lab and use an actual type instead of drawing it.",
+            "mainimg": "../img/port (6).jpg",
+            "image": "../img/port (6).jpg",
+            "projimages":["../img/port (6).jpg", "../img/port (6)2.jpg", "../img/port (6)3.jpg", "../img/port (6)4.jpg"]}
         ],
     "carousel": [
         {
@@ -80,6 +92,10 @@
         {
             "src": "../img/port (5).jpg",
             "alt": "img5"
+        },
+        {
+            "src": "../img/port (6).jpg",
+            "alt": "img6"
         }
     ]
 
