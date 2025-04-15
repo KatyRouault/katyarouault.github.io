@@ -1,40 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>Final project portfolio</title>
-        <link rel="stylesheet" href="../css/wa13portfolio.css">
-    </head>
-    <body>
-        <nav class="nav-bar">
-            <a href="../wa/wa13portfolio.html">
-                <button>Home</button>
-            </a>
-            <a href="../projects_folder/Portfolio Page.html">
-                <button>My Portfolio</button>
-            </a>
-            <a href="../projects_folder/about.html">
-                <button>About me</button>
-            </a>
-            <a href="../projects_folder/resume.html">
-                <button>Resume</button>
-            </a>
-        </nav>
+  <head>
+    <meta charset="utf-8">
+    <title>Final project portfolio</title>
+    <link rel="stylesheet" href="../css/wa13portfolio.css">
+    
+    <!-- Load p5.js library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.min.js"></script>
+    
+    <!-- Your custom CSS file for styling -->
+    <link rel="stylesheet" href="../css/wa13portfolio.css">
+  </head>
+  
+  <body>
+    <nav class="nav-bar">
+      <a href="../wa/wa13portfolio.html"><button>Home</button></a>
+      <a href="../projects_folder/Portfolio Page.html"><button>My Portfolio</button></a>
+      <a href="../projects_folder/about.html"><button>About me</button></a>
+      <a href="../projects_folder/resume.html"><button>Resume</button></a>
+    </nav>
 
-        <section id="about">
-            <div class="text-box">
-            <h1>Katy Rouault</h1>
-            <h2>Hi, I'm currently a student at CU Boulder majoring in Creative Technology and Design.</h2>
-            <p>My goal is to be a UX/UI designer. I'm taking many classes that work with web and graphic design. This is my offical website for my portfolio and more information about me.</p>
-            <div class="portfolio">
-            </a>
-            </div>
-            </div>
-            <img src="../img/FDCF41B6-1BF5-43FC-8DB7-CA63457DFBCD_1_105_c.jpeg" alt="me">
-        </section>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.min.js"></script>
+    <section id="about">
+      <div class="text-box">
+        <h1>Katy Rouault</h1>
+        <h2>Hi, I'm currently a student at CU Boulder majoring in Creative Technology and Design.</h2>
+        <p>My goal is to be a UX/UI designer. I'm taking many classes that work with web and graphic design. This is my official website for my portfolio and more information about me.</p>
+      </div>
+      <img src="../img/FDCF41B6-1BF5-43FC-8DB7-CA63457DFBCD_1_105_c.jpeg" alt="me">
+    </section>
 
-        <script src="../js/sketch.js"></script>
-    </body>
+    <!-- Insert your p5.js sketch canvas here -->
+    <div id="p5-holder"></div>
 
+    <!-- Include p5.js sketch.js -->
+    <script src="js/sketch.js"></script>
+  </body>
 </html>
