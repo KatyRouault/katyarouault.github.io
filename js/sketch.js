@@ -12,11 +12,12 @@ let myFont;
 let fontSize;
 
 function preload() {
-  myFont = loadFont('Assets/Poppins-Regular.ttf'); // Make sure this path is correct
+  myFont = loadFont('../assets/Poppins-Regular.ttf'); // Make sure this path is correct
 }
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  let canvas = createCanvas(windowWidth, windowHeight);
+  canvas.parent('p5-holder');
   textFont(myFont);
   textSize(24);
   textAlign(CENTER, CENTER);
@@ -28,7 +29,7 @@ function setup() {
 }
 
 function draw() {
-  background('rgb(214, 208, 201)');
+  background('rgb(214, 208, 201)'); // Match your site’s background
 
   let timeElapsed = millis() - startTime;
 
@@ -163,8 +164,30 @@ function windowResized() {
   resetSketch();
 }
 
+function hideAnimation() {
+  const overlay = document.getElementById('sketch-overlay');
+  overlay.classList.add('hidden'); // Hide the overlay
+
+  // Optionally, stop the p5.js animation
+  noLoop();
+
+  // Add a delay before redirecting
+  setTimeout(function() {
+    window.location.href = "../projects_folder/Portfolio Page.html";  // Redirect to portfolio page
+  }, 500);  // 500ms delay to let the overlay transition out
+}
+
+document.getElementById('portfolio-link').addEventListener('click', hideAnimation);
+
+// Optional: Hide the animation when clicking anywhere on the canvas
 function mousePressed() {
-  clear(); // Clears the canvas
-  //background('rgb(214, 208, 201)'); // Repaint background color
-  noLoop(); // Stop the animation
+  // Hide the canvas when clicked
+  const canvas = select('canvas');
+  canvas.hide();  // This hides the animation canvas
+  
+  // Show your portfolio or other content
+  const overlay = document.getElementById('sketch-overlay');
+  if (overlay) {
+    overlay.classList.add('hidden');  // This ensures the content underneath is visible
+  }
 }

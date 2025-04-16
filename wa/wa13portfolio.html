@@ -1,38 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Final project portfolio</title>
-    <link rel="stylesheet" href="../css/wa13portfolio.css">
-    
-    <!-- Load p5.js library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.min.js"></script>
-    
-    <!-- Your custom CSS file for styling -->
-    <link rel="stylesheet" href="../css/wa13portfolio.css">
-  </head>
-  
-  <body>
-    <nav class="nav-bar">
-      <a href="../wa/wa13portfolio.html"><button>Home</button></a>
-      <a href="../projects_folder/Portfolio Page.html"><button>My Portfolio</button></a>
-      <a href="../projects_folder/about.html"><button>About me</button></a>
-      <a href="../projects_folder/resume.html"><button>Resume</button></a>
-    </nav>
+<head>
+  <meta charset="utf-8">
+  <title>Final project portfolio</title>
+  <link rel="stylesheet" href="../css/wa13portfolio.css">
 
-    <section id="about">
-      <div class="text-box">
-        <h1>Katy Rouault</h1>
-        <h2>Hi, I'm currently a student at CU Boulder majoring in Creative Technology and Design.</h2>
-        <p>My goal is to be a UX/UI designer. I'm taking many classes that work with web and graphic design. This is my official website for my portfolio and more information about me.</p>
-      </div>
-      <img src="../img/FDCF41B6-1BF5-43FC-8DB7-CA63457DFBCD_1_105_c.jpeg" alt="me">
-    </section>
+  <!-- Load p5.js library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.min.js"></script>
 
-    <!-- Insert your p5.js sketch canvas here -->
+  <!-- Your custom sketch -->
+  <script defer src="../js/sketch.js"></script>
+</head>
+<body>
+  <!-- p5.js Fullscreen Overlay -->
+  <div id="sketch-overlay">
     <div id="p5-holder"></div>
+  </div>
 
-    <!-- Include p5.js sketch.js -->
-    <script src="../js/sketch.js"></script>
-  </body>
+  <!-- Your full page content remains untouched -->
+  <nav class="nav-bar">
+    <a href="../wa/wa13portfolio.html"><button>Home</button></a>
+    <a href="../projects_folder/Portfolio Page.html"><button id="portfolio-link">My Portfolio</button></a>
+    <a href="../projects_folder/about.html"><button>About me</button></a>
+    <a href="../projects_folder/resume.html"><button>Resume</button></a>
+  </nav>
+
+  <!-- Portfolio content that should only be revealed after the click -->
+  <section id="about">
+    <div class="text-box">
+      <h1>Katy Rouault</h1>
+      <h2>Hi, I'm currently a student at CU Boulder majoring in Creative Technology and Design.</h2>
+      <p>My goal is to be a UX/UI designer. I'm taking many classes that work with web and graphic design. This is my official website for my portfolio and more information about me.</p>
+    </div>
+    <img src="../img/FDCF41B6-1BF5-43FC-8DB7-CA63457DFBCD_1_105_c.jpeg" alt="me">
+  </section>
+
+  <script>
+    // Wait for the document to fully load before attaching event listeners
+    window.onload = function() {
+      const sketchOverlay = document.getElementById('sketch-overlay');
+      
+      // Wait for the canvas to be clicked, hide the animation
+      sketchOverlay.addEventListener('click', () => {
+        sketchOverlay.classList.add('hidden');
+      });
+      
+      // Portfolio button click handling
+      const portfolioLink = document.getElementById('portfolio-link');
+      portfolioLink.addEventListener('click', function() {
+        hideAnimation();  // This is the function from sketch.js to hide the animation
+      });
+    }
+  </script>
+</body>
 </html>
