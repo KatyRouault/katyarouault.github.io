@@ -164,30 +164,53 @@ function windowResized() {
   resetSketch();
 }
 
-function hideAnimation() {
-  const overlay = document.getElementById('sketch-overlay');
-  overlay.classList.add('hidden'); // Hide the overlay
-
-  // Optionally, stop the p5.js animation
-  noLoop();
-
-  // Add a delay before redirecting
-  setTimeout(function() {
-    window.location.href = "../projects_folder/Portfolio Page.html";  // Redirect to portfolio page
-  }, 500);  // 500ms delay to let the overlay transition out
+// New function to hide the overlay
+function hideOverlay() {
+    const sketchOverlay = document.getElementById('sketch-overlay');
+    sketchOverlay.classList.add('hidden');
 }
 
-document.getElementById('portfolio-link').addEventListener('click', hideAnimation);
-
-// Optional: Hide the animation when clicking anywhere on the canvas
 function mousePressed() {
-  // Hide the canvas when clicked
-  const canvas = select('canvas');
-  canvas.hide();  // This hides the animation canvas
+    hideOverlay();  // Hide the overlay when the canvas is clicked
+    
+    const canvas = select('canvas');
+    canvas.style('z-index', '-1'); // Move canvas behind other content (negative z-index)
+    canvas.style('position', 'absolute'); // Ensure the canvas stays in position
+    canvas.style('top', '0'); // Set top alignment to 0
+    canvas.style('left', '0'); // Set left alignment to 0
   
-  // Show your portfolio or other content
-  const overlay = document.getElementById('sketch-overlay');
-  if (overlay) {
-    overlay.classList.add('hidden');  // This ensures the content underneath is visible
-  }
+    // The animation continues running in the background
 }
+
+// Wait for the document to fully load before attaching event listeners
+window.onload = function () {
+  const sketchOverlay = document.getElementById('sketch-overlay');
+  const hasSeenOverlay = localStorage.getItem('hasSeenOverlay');
+
+  if (hasSeenOverlay) {
+    sketchOverlay.classList.add('hidden');
+
+    const canvas = select('canvas');
+    canvas.style('z-index', '-1');
+    canvas.style('position', 'absolute');
+    canvas.style('top', '0');
+    canvas.style('left', '0');
+  } else {
+    localStorage.setItem('hasSeenOverlay', 'true');
+
+    sketchOverlay.addEventListener('click', () => {
+      hideOverlay();
+
+      const canvas = select('canvas');
+      canvas.style('z-index', '-1');
+      canvas.style('position', 'absolute');
+      canvas.style('top', '0');
+      canvas.style('left', '0');
+    });
+
+    const portfolioLink = document.getElementById('portfolio-link');
+    if (portfolioLink) {
+      portfolioLink.addEventListener('click', hideOverlay);
+    }
+  }
+};
