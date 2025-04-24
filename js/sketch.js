@@ -183,34 +183,13 @@ function mousePressed() {
 }
 
 // Wait for the document to fully load before attaching event listeners
-window.onload = function () {
-  const sketchOverlay = document.getElementById('sketch-overlay');
-  const hasSeenOverlay = localStorage.getItem('hasSeenOverlay');
-
-  if (hasSeenOverlay) {
-    sketchOverlay.classList.add('hidden');
-
-    const canvas = select('canvas');
-    canvas.style('z-index', '-1');
-    canvas.style('position', 'absolute');
-    canvas.style('top', '0');
-    canvas.style('left', '0');
-  } else {
-    localStorage.setItem('hasSeenOverlay', 'true');
-
-    sketchOverlay.addEventListener('click', () => {
-      hideOverlay();
-
-      const canvas = select('canvas');
-      canvas.style('z-index', '-1');
-      canvas.style('position', 'absolute');
-      canvas.style('top', '0');
-      canvas.style('left', '0');
-    });
-
+window.onload = function() {
+    const sketchOverlay = document.getElementById('sketch-overlay');
+    
+    // Wait for the canvas to be clicked, hide the animation
+    sketchOverlay.addEventListener('click', hideOverlay);
+    
+    // Portfolio button click handling
     const portfolioLink = document.getElementById('portfolio-link');
-    if (portfolioLink) {
-      portfolioLink.addEventListener('click', hideOverlay);
-    }
-  }
+    portfolioLink.addEventListener('click', hideOverlay);  // Hide animation when portfolio button is clicked
 };
