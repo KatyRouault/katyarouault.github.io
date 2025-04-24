@@ -186,33 +186,8 @@ function mousePressed() {
 window.onload = function () {
   const sketchOverlay = document.getElementById('sketch-overlay');
 
-  // Immediately check if overlay should be shown
-const hasSeenOverlay = sessionStorage.getItem('hasSeenOverlay');
-
-if (!hasSeenOverlay) {
-  // Make sure the overlay is visible on first load
-  window.addEventListener('DOMContentLoaded', () => {
-    const sketchOverlay = document.getElementById('sketch-overlay');
-    sketchOverlay.classList.remove('hidden');
-
-    // Once it's shown, set flag so it doesn't re-show in this session
-    sessionStorage.setItem('hasSeenOverlay', 'true');
-
-    sketchOverlay.addEventListener('click', () => {
-      hideOverlay();
-
-      const canvas = select('canvas');
-      canvas.style('z-index', '-1');
-      canvas.style('position', 'absolute');
-      canvas.style('top', '0');
-      canvas.style('left', '0');
-    });
-  });
-} else {
-  // If already seen, hide immediately
-  window.addEventListener('DOMContentLoaded', () => {
-    const sketchOverlay = document.getElementById('sketch-overlay');
-    sketchOverlay.classList.add('hidden');
+  sketchOverlay.addEventListener('click', () => {
+    hideOverlay();
 
     const canvas = select('canvas');
     canvas.style('z-index', '-1');
@@ -220,4 +195,9 @@ if (!hasSeenOverlay) {
     canvas.style('top', '0');
     canvas.style('left', '0');
   });
-}
+
+  const portfolioLink = document.getElementById('portfolio-link');
+  if (portfolioLink) {
+    portfolioLink.addEventListener('click', hideOverlay);
+  }
+};

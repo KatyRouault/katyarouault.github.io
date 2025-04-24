@@ -15,9 +15,9 @@
   <!-- p5.js Fullscreen Overlay -->
   <div id="sketch-overlay">
     <div id="p5-holder"></div>
-    <!-- Text for instructions -->
     <div class="overlay-text">Click to view portfolio!</div>
   </div>
+  
 
   <!-- Your full page content remains untouched -->
   <nav class="nav-bar">
@@ -36,6 +36,16 @@
     </div>
     <img src="../img/FDCF41B6-1BF5-43FC-8DB7-CA63457DFBCD_1_105_c.jpeg" alt="me">
   </section>
-
+  <script>
+    // Only show overlay on first time site load in this tab
+    if (!sessionStorage.getItem('overlayShown')) {
+      sessionStorage.setItem('overlayShown', 'true');
+      // Let sketch.js control the overlay display
+    } else {
+      const overlay = document.getElementById('sketch-overlay');
+      if (overlay) overlay.classList.add('hidden');
+    }
+  </script>
+  
 </body>
 </html>
