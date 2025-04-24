@@ -185,35 +185,33 @@ function mousePressed() {
 // Wait for the document to fully load before attaching event listeners
 window.onload = function () {
   const sketchOverlay = document.getElementById('sketch-overlay');
-  const navType = performance.getEntriesByType("navigation")[0]?.type;
 
-  // Always show the overlay on page load or refresh
-  if (navType === 'navigate' || navType === 'reload') {
-    // Only show if user hasn't already clicked around
-    if (!sessionStorage.getItem('sawOverlay')) {
-      sketchOverlay.classList.remove('hidden');
-      sessionStorage.setItem('sawOverlay', 'true');
+  // This line ensures the overlay shows every time the page is reloaded.
+  // The sessionStorage key gets reset every time, so the overlay will re-show.
+  sessionStorage.removeItem('overlaySeen');
 
-      sketchOverlay.addEventListener('click', () => {
-        hideOverlay();
+  // Now check if the overlay should display
+  if (!sessionStorage.getItem('overlaySeen')) {
+    sketchOverlay.classList.remove('hidden');
+    sessionStorage.setItem('overlaySeen', 'true');
 
-        const canvas = select('canvas');
-        canvas.style('z-index', '-1');
-        canvas.style('position', 'absolute');
-        canvas.style('top', '0');
-        canvas.style('left', '0');
-      });
-    } else {
-      sketchOverlay.classList.add('hidden');
-    }
+    sketchOverlay.addEventListener('click', () => {
+      hideOverlay();
+
+      const canvas = select('canvas');
+      canvas.style('z-index', '-1');
+      canvas.style('position', 'absolute');
+      canvas.style('top', '0');
+      canvas.style('left', '0');
+    });
   } else {
-    // If this was triggered by a back/forward nav or internal link
     sketchOverlay.classList.add('hidden');
-  }
 
-  // Optional: hide overlay when clicking Portfolio
-  const portfolioLink = document.getElementById('portfolio-link');
-  if (portfolioLink) {
-    portfolioLink.addEventListener('click', hideOverlay);
+    const canvas = select('canvas');
+    canvas.style('z-index', '-1');
+    canvas.style('position', 'absolute');
+    canvas.style('top', '0');
+    canvas.style('left', '0');
   }
 };
+
