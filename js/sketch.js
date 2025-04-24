@@ -186,12 +186,13 @@ function mousePressed() {
 window.onload = function () {
   const sketchOverlay = document.getElementById('sketch-overlay');
 
-  // Detect if the site was opened or refreshed
-  const navType = performance.getEntriesByType("navigation")[0]?.type;
+  // Check if overlay has been shown this session
+  const hasSeenOverlay = sessionStorage.getItem('hasSeenOverlay');
 
-  if (navType === 'navigate' || navType === 'reload' || !navType) {
-    // Show overlay only on full load/refresh
+  if (!hasSeenOverlay) {
+    // First time this tab is opened → show the overlay
     sketchOverlay.classList.remove('hidden');
+    sessionStorage.setItem('hasSeenOverlay', 'true');
 
     sketchOverlay.addEventListener('click', () => {
       hideOverlay();
@@ -203,7 +204,7 @@ window.onload = function () {
       canvas.style('left', '0');
     });
   } else {
-    // Hide overlay for in-site navigation (like clicking "Home")
+    // If the overlay was already seen this session → hide it
     sketchOverlay.classList.add('hidden');
 
     const canvas = select('canvas');
@@ -213,10 +214,12 @@ window.onload = function () {
     canvas.style('left', '0');
   }
 
+  // Optional: hide if portfolio is clicked
   const portfolioLink = document.getElementById('portfolio-link');
   if (portfolioLink) {
     portfolioLink.addEventListener('click', hideOverlay);
   }
 };
+
 
 
