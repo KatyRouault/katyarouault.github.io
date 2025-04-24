@@ -13,8 +13,6 @@
     justify-content: center;
 }
 
-/* Add this to the existing CSS */
-
 /* Text on the animation overlay */
 #sketch-overlay .overlay-text {
     position: absolute;
@@ -29,9 +27,17 @@
     cursor: pointer;
 }
 
+/* Make sure the canvas stays behind everything */
+#p5-holder canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1; /* This ensures that the canvas stays behind all content */
+}
 
+/* You can still have other content on top of the canvas */
 #sketch-overlay.hidden {
-    display: none;
+    display: none; /* Hide the overlay, but the canvas remains in the background */
 }
 
 /* Ensure the canvas stays fixed */
