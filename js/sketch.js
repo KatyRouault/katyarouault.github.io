@@ -183,13 +183,40 @@ function mousePressed() {
 }
 
 // Wait for the document to fully load before attaching event listeners
-window.onload = function() {
-    const sketchOverlay = document.getElementById('sketch-overlay');
-    
-    // Wait for the canvas to be clicked, hide the animation
-    sketchOverlay.addEventListener('click', hideOverlay);
-    
-    // Portfolio button click handling
-    const portfolioLink = document.getElementById('portfolio-link');
-    portfolioLink.addEventListener('click', hideOverlay);  // Hide animation when portfolio button is clicked
+window.onload = function () {
+  const sketchOverlay = document.getElementById('sketch-overlay');
+
+  // Detect if the site was opened or refreshed
+  const navType = performance.getEntriesByType("navigation")[0]?.type;
+
+  if (navType === 'navigate' || navType === 'reload' || !navType) {
+    // Show overlay only on full load/refresh
+    sketchOverlay.classList.remove('hidden');
+
+    sketchOverlay.addEventListener('click', () => {
+      hideOverlay();
+
+      const canvas = select('canvas');
+      canvas.style('z-index', '-1');
+      canvas.style('position', 'absolute');
+      canvas.style('top', '0');
+      canvas.style('left', '0');
+    });
+  } else {
+    // Hide overlay for in-site navigation (like clicking "Home")
+    sketchOverlay.classList.add('hidden');
+
+    const canvas = select('canvas');
+    canvas.style('z-index', '-1');
+    canvas.style('position', 'absolute');
+    canvas.style('top', '0');
+    canvas.style('left', '0');
+  }
+
+  const portfolioLink = document.getElementById('portfolio-link');
+  if (portfolioLink) {
+    portfolioLink.addEventListener('click', hideOverlay);
+  }
 };
+
+

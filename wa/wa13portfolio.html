@@ -37,22 +37,5 @@
     <img src="../img/FDCF41B6-1BF5-43FC-8DB7-CA63457DFBCD_1_105_c.jpeg" alt="me">
   </section>
 
-  <script>
-    // Wait for the document to fully load before attaching event listeners
-    window.onload = function() {
-      const sketchOverlay = document.getElementById('sketch-overlay');
-      
-      // Wait for the canvas to be clicked, hide the animation
-      sketchOverlay.addEventListener('click', () => {
-        sketchOverlay.classList.add('hidden');
-      });
-      
-      // Portfolio button click handling
-      const portfolioLink = document.getElementById('portfolio-link');
-      portfolioLink.addEventListener('click', function() {
-        hideAnimation();  // This is the function from sketch.js to hide the animation
-      });
-    }
-  </script>
 </body>
 </html>
