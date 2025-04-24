@@ -213,5 +213,16 @@ window.onload = function () {
     canvas.style('top', '0');
     canvas.style('left', '0');
   }
+    // Prevent page reload if already on home
+    const homeButton = document.getElementById('home-button');
+    if (homeButton) {
+      homeButton.addEventListener('click', function (e) {
+        const currentPage = window.location.pathname.split('/').pop();
+        if (currentPage === "wa13portfolio.html") {
+          e.preventDefault(); // Prevent reload = overlay won't re-show
+        }
+      });
+    }
+  
 };
 
