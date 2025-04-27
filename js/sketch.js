@@ -186,13 +186,6 @@ function mousePressed() {
 window.onload = function () {
   const sketchOverlay = document.getElementById('sketch-overlay');
 
-  const navType = performance.getEntriesByType("navigation")[0]?.type;
-
-  if (navType === 'reload') {
-    // Only clear sessionStorage if user actually refreshed the page
-    sessionStorage.removeItem('overlaySeen');
-  }
-
   if (!sessionStorage.getItem('overlaySeen')) {
     sketchOverlay.classList.remove('hidden');
     sessionStorage.setItem('overlaySeen', 'true');
@@ -216,13 +209,12 @@ window.onload = function () {
     canvas.style('left', '0');
   }
 
-  // Prevent page reload if already on home
   const homeButton = document.getElementById('home-button');
   if (homeButton) {
     homeButton.addEventListener('click', function (e) {
       const currentPage = window.location.pathname.split('/').pop();
       if (currentPage === "wa13portfolio.html") {
-        e.preventDefault(); // Prevent reload
+        e.preventDefault();
       }
     });
   }

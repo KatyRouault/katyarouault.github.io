@@ -4,6 +4,14 @@
         <meta charset="utf-8">
         <title>Final project portfolio</title>
         <link rel="stylesheet" href="../css/wa13portfolio.css">
+        <script>
+            if (sessionStorage.getItem('overlaySeen')) {
+              document.addEventListener('DOMContentLoaded', () => {
+                const overlay = document.getElementById('sketch-overlay');
+                if (overlay) overlay.classList.add('hidden');
+              });
+            }
+          </script>          
     </head>
     <body class="projectbody">
         <nav class="nav-bar">

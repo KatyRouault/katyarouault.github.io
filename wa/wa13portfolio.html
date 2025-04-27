@@ -10,6 +10,14 @@
 
   <!-- Your custom sketch -->
   <script defer src="../js/sketch.js"></script>
+  <script>
+    if (sessionStorage.getItem('overlaySeen')) {
+      document.addEventListener('DOMContentLoaded', () => {
+        const overlay = document.getElementById('sketch-overlay');
+        if (overlay) overlay.classList.add('hidden');
+      });
+    }
+  </script>  
 </head>
 <body>
   <!-- p5.js Fullscreen Overlay -->
