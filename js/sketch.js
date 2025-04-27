@@ -186,6 +186,15 @@ function mousePressed() {
 window.onload = function () {
   const sketchOverlay = document.getElementById('sketch-overlay');
 
+  // Detect if the user refreshed/reloaded
+  const navType = performance.getEntriesByType("navigation")[0]?.type;
+
+  if (navType === 'reload') {
+    // Only clear overlay seen if it was a real reload
+    sessionStorage.removeItem('overlaySeen');
+  }
+
+  // Now, show overlay if not seen this session
   if (!sessionStorage.getItem('overlaySeen')) {
     sketchOverlay.classList.remove('hidden');
     sessionStorage.setItem('overlaySeen', 'true');
@@ -209,12 +218,13 @@ window.onload = function () {
     canvas.style('left', '0');
   }
 
+  // Prevent reload if already on home
   const homeButton = document.getElementById('home-button');
   if (homeButton) {
     homeButton.addEventListener('click', function (e) {
       const currentPage = window.location.pathname.split('/').pop();
       if (currentPage === "wa13portfolio.html") {
-        e.preventDefault();
+        e.preventDefault(); // Don't reload page if already on home
       }
     });
   }
