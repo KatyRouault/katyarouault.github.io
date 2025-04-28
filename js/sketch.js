@@ -186,22 +186,28 @@ function mousePressed() {
 window.onload = function () {
   const sketchOverlay = document.getElementById('sketch-overlay');
 
-  if (!sessionStorage.getItem('overlaySeen')) {
-    // User hasn't seen the overlay yet
+  const navType = performance.getEntriesByType("navigation")[0]?.type;
+
+  if (navType === 'navigate' || navType === 'reload') {
     sketchOverlay.classList.remove('hidden');
 
     sketchOverlay.addEventListener('click', () => {
+      // ✅ When user clicks the overlay, hide it and go to home page
       hideOverlay();
-      sessionStorage.setItem('overlaySeen', 'true'); // Mark that they've seen it
 
       const canvas = select('canvas');
       canvas.style('z-index', '-1');
       canvas.style('position', 'absolute');
       canvas.style('top', '0');
       canvas.style('left', '0');
+
+      // ✅ After click, always go back to Home page
+      if (window.location.pathname.split("/").pop() !== "wa13portfolio.html") {
+        window.location.href = "../wa/wa13portfolio.html"; 
+      }
     });
   } else {
-    // User has already seen it this session
+    // If not navigate or reload, just hide immediately
     sketchOverlay.classList.add('hidden');
 
     const canvas = select('canvas');
@@ -211,12 +217,13 @@ window.onload = function () {
     canvas.style('left', '0');
   }
 
+  // Prevent reload if already on Home
   const homeButton = document.getElementById('home-button');
   if (homeButton) {
     homeButton.addEventListener('click', function (e) {
       const currentPage = window.location.pathname.split('/').pop();
       if (currentPage === "wa13portfolio.html") {
-        e.preventDefault(); // Don't reload if already home
+        e.preventDefault();
       }
     });
   }
