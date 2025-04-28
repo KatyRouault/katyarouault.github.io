@@ -186,14 +186,13 @@ function mousePressed() {
 window.onload = function () {
   const sketchOverlay = document.getElementById('sketch-overlay');
 
-  const navType = performance.getEntriesByType("navigation")[0]?.type;
-
-  // Always show the overlay when the page is loaded or reloaded
-  if (navType === 'navigate' || navType === 'reload') {
+  if (!sessionStorage.getItem('overlaySeen')) {
+    // User hasn't seen the overlay yet
     sketchOverlay.classList.remove('hidden');
 
     sketchOverlay.addEventListener('click', () => {
       hideOverlay();
+      sessionStorage.setItem('overlaySeen', 'true'); // Mark that they've seen it
 
       const canvas = select('canvas');
       canvas.style('z-index', '-1');
@@ -202,7 +201,7 @@ window.onload = function () {
       canvas.style('left', '0');
     });
   } else {
-    // If this was back/forward nav or link, hide immediately
+    // User has already seen it this session
     sketchOverlay.classList.add('hidden');
 
     const canvas = select('canvas');
@@ -212,13 +211,12 @@ window.onload = function () {
     canvas.style('left', '0');
   }
 
-  // Prevent reloading if already on home
   const homeButton = document.getElementById('home-button');
   if (homeButton) {
     homeButton.addEventListener('click', function (e) {
       const currentPage = window.location.pathname.split('/').pop();
       if (currentPage === "wa13portfolio.html") {
-        e.preventDefault(); // Stop reload if already home
+        e.preventDefault(); // Don't reload if already home
       }
     });
   }
