@@ -84,7 +84,6 @@ function resetSketch() {
     });
   }
 
-  // Adjust font size and center the word
   fontSize = min(width, height) / 6;
   pointsArray = myFont.textToPoints(
     word,
@@ -164,51 +163,30 @@ function windowResized() {
   resetSketch();
 }
 
-// New function to hide the overlay
+// Hide overlay and stop the sketch
 function hideOverlay() {
-    const sketchOverlay = document.getElementById('sketch-overlay');
-    sketchOverlay.classList.add('hidden');
+  const sketchOverlay = document.getElementById('sketch-overlay');
+  sketchOverlay.classList.add('hidden');
+  noLoop(); // Stop the animation
 }
 
 function mousePressed() {
-    hideOverlay();  // Hide the overlay when the canvas is clicked
-    
-    const canvas = select('canvas');
-    canvas.style('z-index', '-1'); // Move canvas behind other content (negative z-index)
-    canvas.style('position', 'absolute'); // Ensure the canvas stays in position
-    canvas.style('top', '0'); // Set top alignment to 0
-    canvas.style('left', '0'); // Set left alignment to 0
-  
-    // The animation continues running in the background
+  hideOverlay();
 }
 
-// Wait for the document to fully load before attaching event listeners
+// Show overlay once per session
 window.onload = function () {
   const sketchOverlay = document.getElementById('sketch-overlay');
 
   if (!sessionStorage.getItem('overlaySeen')) {
-    // User hasn't seen the overlay yet
     sketchOverlay.classList.remove('hidden');
-
     sketchOverlay.addEventListener('click', () => {
       hideOverlay();
-      sessionStorage.setItem('overlaySeen', 'true'); // Mark that they've seen it
-
-      const canvas = select('canvas');
-      canvas.style('z-index', '-1');
-      canvas.style('position', 'absolute');
-      canvas.style('top', '0');
-      canvas.style('left', '0');
+      sessionStorage.setItem('overlaySeen', 'true');
     });
   } else {
-    // User has already seen it this session
     sketchOverlay.classList.add('hidden');
-
-    const canvas = select('canvas');
-    canvas.style('z-index', '-1');
-    canvas.style('position', 'absolute');
-    canvas.style('top', '0');
-    canvas.style('left', '0');
+    noLoop(); // Don't run animation again
   }
 
   const homeButton = document.getElementById('home-button');
@@ -216,7 +194,7 @@ window.onload = function () {
     homeButton.addEventListener('click', function (e) {
       const currentPage = window.location.pathname.split('/').pop();
       if (currentPage === "wa13portfolio.html") {
-        e.preventDefault(); // Don't reload if already home
+        e.preventDefault(); // Stay on home
       }
     });
   }
